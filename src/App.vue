@@ -1,12 +1,60 @@
+<script setup lang="ts">
+import { onMounted } from "vue";
+import { useUserStore } from "@/stores/user";
+import { useAppStore } from "@/stores/app";
+import { storeToRefs } from "pinia";
+import { useSupabaseClient } from "@/composables/supabase";
+
+
+const userStore = useUserStore();
+const appStore = useAppStore();
+
+const {pageTitle, dialog} = storeToRefs(appStore);
+const currentYear = new Date().getFullYear();
+
+/** Validating user session. Recieved data will store on user store and use the store upsert 
+ a profile in db. **/
+onMounted(async () => {
+    const {data} = await useSupabaseClient.auth.getSession();
+
+    if (data && data.session && data.session.user) {
+        await userStore.insertProfile(data.session);
+
+        userStore.setUserSession(data.session);
+    }
+    useSupabaseClient.auth.onAuthStateChange((_, _session) => {
+        userStore.setUserSession(data.session);
+    });
+});
+</script>
+
 <template>
   <v-app>
+    <app-menu />
+    <v-app-bar app style="position: relative">
+      <v-app-bar-nav-icon @click="appStore.toggleDrawer()"></v-app-bar-nav-icon>
+      <v-toolbar-title>💪 Fittest Pal - {{ pageTitle }}</v-toolbar-title>
+    </v-app-bar>
+
     <v-main>
       <router-view />
-      <h1>App.vue</h1>
+      <v-dialog v-model="dialog.visible" :fullscreen="dialog.fullscreen">
+        <v-card>
+          <v-card-title>{{ dialog.title }}</v-card-title>
+          <v-card-text
+            ><p v-html="dialog.content"></p>
+          </v-card-text>
+          <v-card-actions>
+            <v-btn color="primary" @click="appStore.hideDialog">Close</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
     </v-main>
+    
+    <v-footer app>
+      <span>&copy; {{ currentYear }} 💪 Fittest Pal Fitness Tracker</span>
+    </v-footer>
   </v-app>
 </template>
 
-<script lang="ts" setup>
-  //
-</script>
+
