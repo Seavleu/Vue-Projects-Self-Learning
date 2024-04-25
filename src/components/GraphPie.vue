@@ -35,4 +35,3 @@ onMounted(async () => {
     v-if="chartData.labels && chartData.datasets"
   />
 </template>
-@/store/graph

@@ -44,4 +44,3 @@ const login = () => {
 
   </v-container>
 </template>
-@/store/user@/store/app

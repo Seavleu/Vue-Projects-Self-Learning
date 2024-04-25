@@ -157,7 +157,3 @@ watch(exercise, () => {
   visibility: visible;
 }
 </style>
-
-
-<!-- *We want to immediately populate the exercises list so we will call the getExercises method wehen 
-* initializing the store -->

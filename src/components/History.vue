@@ -91,4 +91,3 @@ onMounted(() => {
     </v-expansion-panels>
   </v-container>
 </template>
-@/store/fitness

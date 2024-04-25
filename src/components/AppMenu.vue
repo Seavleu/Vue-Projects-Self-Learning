@@ -13,9 +13,6 @@ const goToPage = (page: string): void => {
   appStore.navigateToPage(page);
 };
 
-
-// As soon as we add the entry to the 
-// menuItems collection in our AppMenu.ts file, we can navigate to our final page
 const menuItems = [
   {
     icon: "mdi-home",
@@ -65,8 +62,3 @@ const menuItems = [
     </v-list>
   </v-navigation-drawer>
 </template>
-
-
-
-<!-- * This is a common pattern to leave the authentication to the server and never the client -->
-<!-- * In next feature we wil configured with Supabase Low Level Security (RLS) policies -->

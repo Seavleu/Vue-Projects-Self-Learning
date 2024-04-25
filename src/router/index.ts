@@ -5,10 +5,11 @@
  */
 
 // Composables
+// Composables
 import { createRouter, createWebHistory } from 'vue-router'
-import { useSupabaseClient } from '@/composables/supabase';
+import { useSupabaseClient } from '@/composables/supabase'
 
-const loginRoute = { name: 'Login'};
+const loginRoute = { name: 'Login' };
 const loggedInRoute = { name: 'Home' };
 
 const loginGuard = async (to: any, from: any, next: Function) => {

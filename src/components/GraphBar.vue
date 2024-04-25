@@ -50,4 +50,3 @@ onMounted(async () => {
     v-if="chartData && chartData.datasets"
   />
 </template>
-@/store/graph
