@@ -1,7 +1,7 @@
-<script setup lang="ts">
-
+<script lang="ts" setup>
+import TrackExercise from "@/components/TrackExercise.vue";
 </script>
 
 <template>
-    <h1>Tracking</h1>
+  <track-exercise />
 </template>

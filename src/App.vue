@@ -5,7 +5,6 @@ import { useAppStore } from "@/stores/app";
 import { storeToRefs } from "pinia";
 import { useSupabaseClient } from "@/composables/supabase";
 
-
 const userStore = useUserStore();
 const appStore = useAppStore();
 

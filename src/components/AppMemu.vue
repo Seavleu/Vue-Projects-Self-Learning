@@ -13,6 +13,8 @@ const goToPage = (page: string): void => {
     appStore.navigateToPage(page);
 };
 
+// As soon as we add the entry to the 
+// menuItems collection in our AppMenu.ts file, we can navigate to our final page
 const menuItems = [
     {
         icon:'mdi-home',
