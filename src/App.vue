@@ -40,7 +40,7 @@ onMounted(async () => {
     </v-app-bar>
     <v-card class="mx-auto my-15" elevation="16" max-width="344">
       <v-card-item>
-        <v-card-title> A fitness App Tracker </v-card-title>
+        <v-card-title>✨ Fitness App Tracker ✨</v-card-title>
         <v-card-subtitle> Learned </v-card-subtitle>
       </v-card-item>
       <v-card-text>
