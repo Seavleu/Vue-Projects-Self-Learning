@@ -1,7 +1,5 @@
 # Feature
 ![image](https://github.com/Seavleu/Vue-Projects-Self-Learning/assets/86590058/ecbae2fe-1fba-4259-a18e-4ccb97c52e07)
-
-![image](https://github.com/Seavleu/Vue-Projects-Self-Learning/assets/86590058/c395b1db-eae8-45db-867c-83c7cc8c7f58)
 ![image](https://github.com/Seavleu/Vue-Projects-Self-Learning/assets/86590058/88b12114-7093-4592-ae4a-77b1a133a33e)
 ![image](https://github.com/Seavleu/Vue-Projects-Self-Learning/assets/86590058/3bcde862-a47c-4cb0-9028-d1ac971e013c)
 # Vuetify (Default)
