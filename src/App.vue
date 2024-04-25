@@ -38,24 +38,21 @@ onMounted(async () => {
         {{ pageTitle }}</v-toolbar-title
       >
     </v-app-bar>
-
+    <v-card class="mx-auto my-15" elevation="16" max-width="344">
+      <v-card-item>
+        <v-card-title> A fitness App Tracker </v-card-title>
+        <v-card-subtitle> Learned </v-card-subtitle>
+      </v-card-item>
+      <v-card-text>
+        State Management: pinia <br />
+        Authentication Policy: Row Level Security (RLS) <br />
+        vue-chart.js <br />
+        vue-router <br />
+        vuetify <br />
+        Apply concepts of stores, composables, and nested components
+      </v-card-text>
+    </v-card>
     <v-main>
-      <v-card class="mx-auto my-8" elevation="16" max-width="344">
-        <v-card-item>
-          <v-card-title> A fitness App Tracker </v-card-title>
-
-          <v-card-subtitle> Learned </v-card-subtitle>
-        </v-card-item>
-        <v-card-text>
-          State Management: pinia <br/>
-          Authentication Policy: Row Level Security (RLS)  <br/>
-          vue-chart.js  <br/>
-          vue-router  <br/>
-          vuetify  <br/>
-          Apply concepts of stores, composables, and nested components
-        </v-card-text>
-
-      </v-card>
       <router-view />
       <v-dialog v-model="dialog.visible" :fullscreen="dialog.fullscreen">
         <v-card>
