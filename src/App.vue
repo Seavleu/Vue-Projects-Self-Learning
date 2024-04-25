@@ -1,29 +1,30 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
-import { useUserStore } from "@/stores/user";
-import { useAppStore } from "@/stores/app";
+import { useUserStore } from "@/store/user";
+import { useAppStore } from "@/store/app";
 import { storeToRefs } from "pinia";
 import { useSupabaseClient } from "@/composables/supabase";
+
+// import AppMenu from "./components/AppMenu.vue";
 
 const userStore = useUserStore();
 const appStore = useAppStore();
 
-const {pageTitle, dialog} = storeToRefs(appStore);
+const { pageTitle, dialog } = storeToRefs(appStore);
 const currentYear = new Date().getFullYear();
 
 /** Validating user session. Recieved data will store on user store and use the store upsert 
  a profile in db. **/
 onMounted(async () => {
-    const {data} = await useSupabaseClient.auth.getSession();
+  const { data } = await useSupabaseClient.auth.getSession();
+  if (data && data.session && data.session.user) {
+    await userStore.insertProfile(data.session);
+    userStore.setUserSession(data.session);
+  }
 
-    if (data && data.session && data.session.user) {
-        await userStore.insertProfile(data.session);
-
-        userStore.setUserSession(data.session);
-    }
-    useSupabaseClient.auth.onAuthStateChange((_, _session) => {
-        userStore.setUserSession(data.session);
-    });
+  useSupabaseClient.auth.onAuthStateChange((_, _session) => {
+    userStore.setUserSession(_session);
+  });
 });
 </script>
 
@@ -41,7 +42,7 @@ onMounted(async () => {
         <v-card>
           <v-card-title>{{ dialog.title }}</v-card-title>
           <v-card-text
-            ><p v-html="dialog.content"></p>
+            ><p v-html="dialog.contents"></p>
           </v-card-text>
           <v-card-actions>
             <v-btn color="primary" @click="appStore.hideDialog">Close</v-btn>
@@ -55,5 +56,4 @@ onMounted(async () => {
     </v-footer>
   </v-app>
 </template>
-
-
+@/store/user@/store/app

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
-import { useFitnessStore } from '@/stores/fitness'
+import { useFitnessStore } from '@/store/fitness'
 
 const fitnessStore = useFitnessStore()
 
@@ -16,4 +16,4 @@ const { exercises } = storeToRefs(fitnessStore)
         item-title="name" 
         item-value="id">
     </v-select>
-</template>
+</template>@/store/fitness

@@ -44,3 +44,4 @@ const exercise = computed(() => (
 <template>
   <grouped-exercise-view :exercise="exercise" v-if="exercise" />
 </template>
+@/store/fitness

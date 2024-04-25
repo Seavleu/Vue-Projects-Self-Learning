@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import type { Ref } from "vue";
-import { useUserStore } from "@/stores/user";
-import { useAppStore } from "@/stores/app";
+import { useUserStore } from "@/store/user";
+import { useAppStore } from "@/store/app";
 
 const userStore = useUserStore();
 const appStore = useAppStore();
@@ -44,3 +44,4 @@ const login = () => {
 
   </v-container>
 </template>
+@/store/user@/store/app

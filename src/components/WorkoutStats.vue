@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted } from "vue";
 import { storeToRefs } from "pinia";
-import { useFitnessStore } from "@/stores/fitness";
+import { useFitnessStore } from "@/store/fitness";
 
 const fitnessStore = useFitnessStore();
 
@@ -64,4 +64,4 @@ onMounted(() => {
 <!--* We’re using an expression to default to 0 values if we have no results 
 from the dashboard. Once it gets filled with values, though, we populate 
 the template with the values. There is some room for optimization since there’s 
-some repetition involved in the template. This would be a good exercise to improve on your own! -->
+some repetition involved in the template. This would be a good exercise to improve on your own! -->@/store/fitness

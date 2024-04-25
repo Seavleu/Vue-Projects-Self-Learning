@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import type { GraphData, GraphDataIterator } from '@/types/graph'
-import { useFitnessStore } from "@/stores/fitness";
+import { useFitnessStore } from "@/store/fitness";
 import type { WorkoutFromDatasource } from "@/types/fitness";
 
 export const useGraphStore = defineStore('graph', () => {

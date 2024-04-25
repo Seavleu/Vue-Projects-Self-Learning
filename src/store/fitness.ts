@@ -2,7 +2,7 @@ import { ref } from "vue";
 import type { Ref } from "vue";
 import { defineStore } from "pinia";
 
-import { useUserStore } from "@/stores/user";
+import { useUserStore } from "@/store/user";
 
 import type { Workout, Exercise, Set, Dashboard, WorkoutFromDatasource, WorkoutViewFromDatasource } from "@/types/fitness";
 

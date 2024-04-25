@@ -5,10 +5,10 @@ import type { Routine } from "@/types/fitness";
 import AddRoutine from "./AddRoutine.vue";
 import { VDatePicker } from "vuetify/labs/VDatePicker";
 
-import { useFitnessStore } from "@stores/fitness";
+import { useFitnessStore } from "@store/fitness";
 const fitnessStore = useFitnessStore();
 
-import { useAppStore } from "@stores/app";
+import { useAppStore } from "@store/app";
 const appStore = useAppStore();
 
 const routines: Ref<Routine[]> = ref([]);

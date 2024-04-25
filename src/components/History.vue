@@ -4,7 +4,7 @@ import type { Ref } from "vue";
 import type { WorkoutViewFromDatasource } from "@/types/fitness";
 import { storeToRefs } from "pinia";
 
-import { useFitnessStore } from "@/stores/fitness";
+import { useFitnessStore } from "@/store/fitness";
 const fitnessStore = useFitnessStore();
 
 const { workouts } = storeToRefs(fitnessStore);
@@ -91,3 +91,4 @@ onMounted(() => {
     </v-expansion-panels>
   </v-container>
 </template>
+@/store/fitness
